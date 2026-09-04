@@ -1,48 +1,86 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Free Videos</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Free Vlog Videos</title>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #fafafa;
+      color: #222;
+    }
+
+    header {
+      text-align: center;
+      padding: 35px 20px;
+      background: white;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 30px auto;
+      padding: 0 20px;
+    }
+
+    .video-card {
+      background: white;
+      padding: 15px;
+      border-radius: 15px;
+      box-shadow: 0 3px 12px #ddd;
+      margin-bottom: 25px;
+    }
+
+    video {
+      width: 100%;
+      border-radius: 10px;
+    }
+
+    .download {
+      display: block;
+      text-align: center;
+      background: #222;
+      color: white;
+      text-decoration: none;
+      padding: 13px;
+      border-radius: 9px;
+      margin-top: 12px;
+    }
+  </style>
 </head>
 
 <body>
 
-  <h1>🎬 Free Videos</h1>
-  <p>Welcome! Free videos yahan milenge.</p>
+<header>
+  <h1>🍓 Free Vlog Videos</h1>
+  <p>Pinteresty & aesthetic videos 🪽</p>
+</header>
 
-  <h2>Upload Video</h2>
+<div class="container">
 
-  <input type="file" id="videoFile" accept="video/*">
-  <button onclick="showVideo()">Add Video</button>
+  <div class="video-card">
 
-  <div id="videoBox"></div>
+    <video controls>
+      <source
+        src="https://res.cloudinary.com/obptrfov/video/upload/InShot_20260905_002656864.mp4"
+        type="video/mp4">
+    </video>
 
-  <script>
-    function showVideo() {
-      const file = document.getElementById("videoFile").files[0];
+    <h2>Aesthetic Vlog Video</h2>
 
-      if (!file) {
-        alert("Pehle video select karo.");
-        return;
-      }
+    <a
+      class="download"
+      href="https://res.cloudinary.com/obptrfov/video/upload/InShot_20260905_002656864.mp4"
+      download>
+      🪽 Download
+    </a>
 
-      const url = URL.createObjectURL(file);
+  </div>
 
-      document.getElementById("videoBox").innerHTML = `
-        <h2>${file.name}</h2>
-
-        <video width="100%" controls>
-          <source src="${url}" type="${file.type}">
-        </video>
-
-        <br><br>
-
-        <a href="${url}" download="${file.name}">
-          ⬇️ Download Video
-        </a>
-      `;
-    }
-  </script>
+</div>
 
 </body>
 </html>
